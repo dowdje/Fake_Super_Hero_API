@@ -49,9 +49,18 @@ describe "Heros API" do
         expect(response).to be_success
         expect(response_body["name"]).to eq("Loganite")
 
-
-
       end
+    end
+  end
+
+  describe 'patch /heros/:id' do
+    context 'is valid' do
+      it 'updates the hero' do
+        hero = Hero.create(name: "Loganite", sex: "?", height: "6'0", age: 12, hometown: "Madison, WI")
+        patch '/api/v1/heros/1', {hero: {name: "Boganite" }}
+        
+
+
     end
   end
 
